@@ -1,0 +1,16 @@
+Build Guideline:
+Clone source code: https://github.com/phantuong/emotiv-installer.git
+Using branch: emotiv-apps-installer
+
+0. Reference: https://doc.qt.io/qtinstallerframework/ifw-getting-started.html
+1. Install mingw
+2. Add mingw path to system path (ex: C:\Qt\Tools\mingw530_32\bin\)
+3. Install python
+4. Add python path to system path (ex: C:\Users\tuong\AppData\Local\Programs\Python\Python37-32)
+5. Download qt source code: https://download.qt.io/archive/qt/5.12/5.12.0/single/
+6. Open Command and cd to qt source code folder
+7. Run command (as suggested in reference #0): configure -prefix %CD%\qtbase -release -static -static-runtime -target xp -accessibility -no-opengl -no-icu -no-sql-sqlite -no-qml-debug -nomake examples -nomake tests -skip qtactiveqt -skip qtenginio -skip qtlocation -skip qtmultimedia -skip qtserialport -skip qtquick1 -skip qtquickcontrols -skip qtscript -skip qtsensors -skip qtwebkit -skip qtwebsockets -skip qtxmlpatterns -skip qt3d
+(some parameter is not existing, we can remove it if configure failed)
+8. Run make or mingw32_make
+9. Open QtCreator, add one more kit with Qt is linked to above built static Qt
+10. Open source code of installer framework and build it with QtCreator (NOTE: swith to release mode before building)
